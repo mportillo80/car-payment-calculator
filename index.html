@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Car Payment Calculator</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/modal.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+<body>
+
+  <!-- primary content -->
+
+  <header>
+    <span class="fas fa-car"></span> Car Payment Calculator
+  </header>
+  <main class="wrapper">
+    <div class="card m-b-md">
+      <div class="card_header" style="display: flex; justify-content: space-between">
+        <div>
+          <span class="fas fa-cogs"></span> Settings
+        </div>
+        <button
+          type="button"
+          class="btn-txt btn-load-sample-data">Load Sample Data <span class="fas fa-angle-right"></span></button>
+      </div>
+      <div class="card_body">
+        <div class="input-group">
+          <div class="subtitle">Original Balance:</div>
+          <input
+            type="text"
+            class="textbox original-balance">
+        </div>
+        <div class="input-group">
+          <div class="subtitle"># of Months (term):</div>
+          <input type="text" class="textbox term">
+        </div>
+        <div class="input-group">
+          <div class="subtitle">First Payment Due (date):</div>
+          <select
+            name="dd-months"
+            id="dd-months"
+            class="dd-months"></select>
+          <select
+            name="dd-days"
+            id="dd-days"
+            class="dd-days"></select>
+          <select
+            name="dd-years"
+            id="dd-years"
+            class="dd-years"></select>
+        </div>
+        <div class="input-group">
+          <div class="subtitle">Interest Rate:</div>
+          <input
+            type="text"
+            class="textbox interest-rate"> %
+        </div>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-calculate">Calculate</button>
+          <button
+            type="button"
+            class="btn btn-white" onclick="clearForm()">Clear</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card_header">
+        <span class="fas fa-list"></span> Summary
+      </div>
+      <div class="card_body">
+        <div class="input-group m-b-md summary-data hide">
+          <ul></ul>
+        </div>
+        <div class="container-results">
+          <div class="text-muted no-results show">No results to display.</div>
+          <div class="results hide">
+            <table>
+              <thead>
+                <tr>
+                  <td>Month</td>
+                  <td>Payment Due</td>
+                  <td>Monthly Payment</td>
+                  <td>Interest</td>
+                  <td>Principal Paid</td>
+                  <td>Total Principal Paid</td>
+                  <td>Remaining Balance</td>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <small>&copy; Mario Portillo - Car Payment Calculator</small>
+  </footer>
+  <script src="scripts/grid.js"></script>
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>
